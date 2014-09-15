@@ -12,7 +12,7 @@
                                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                                 <em:minVersion>10.0</em:minVersion>
                                 <em:maxVersion>*</em:maxVersion>
-                                <em:updateLink>https://raw.githubusercontent.com/rasso1/youkuantiads/new/master/youkuantiads_with_player.xpi</em:updateLink>
+                                <em:updateLink>https://github.com/rasso1/youkuantiads/releases/download/youkuantiads/youkuantiads_with_player.xpi</em:updateLink>
                             </RDF:Description>
                         </em:targetApplication>
                     </RDF:Description>
