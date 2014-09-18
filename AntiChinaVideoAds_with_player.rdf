@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-    <RDF:Description about="urn:mozilla:extension:youkuantiads_with_player@haoutil.tk">
+    <RDF:Description about="urn:mozilla:extension:AntiChinaVideoAds_with_player@xxx.com">
         <em:updates>
             <RDF:Seq>
                 <RDF:li>
