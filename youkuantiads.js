@@ -32,10 +32,6 @@ YoukuAntiADs.prototype = {
             'player2': 'chrome://YoukuAntiADs/content/swf/iqiyi.swf',
             're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop)?Player_?.*)\.swf/i
         },
-        'inima2': {
-            'player': 'http://www.iqiyi.com/player/20140709110406/20088.swf',
-            're': /https?:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/\d[a-z0-9]*.swf/i
-        },
         'tudou': {
             'player': 'chrome://YoukuAntiADs/content/swf/tudou.swf',
             're': /http:\/\/js\.tudouui\.com\/.*portalplayer[^\.]*\.swf/i
@@ -69,9 +65,9 @@ YoukuAntiADs.prototype = {
            'player': 'chrome://youkuantiads/content/swf/sohu.swf',
            're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!(live|\d+)).*\d+\/(main|PlayerShell)\.swf/i
         },
-        'sohu_': {
+        'sohu_liv': {
            'player': 'chrome://youkuantiads/content/swf/sohulive.swf',
-           're': /http:\/\/\d+\.\d+\.\d+\.\d+:\d+\/test\/player\/main\.swf/i
+           're': /http:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]{2,5})?(\/test)?\/(player|webplayer)\/(main|playershell)\.swf/i
         },
         'sohu_live': {
            'player': 'chrome://youkuantiads/content/swf/sohulive.swf',
