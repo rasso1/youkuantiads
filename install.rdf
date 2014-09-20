@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>AntiChinaVideoAds_with_player@xxx.com</em:id>
+        <em:name>AntiChinaVideoAdsAlliances 中国反视频广告联盟</em:name>
+        <em:version>1.7.0.2</em:version>
+        <em:creator>Harv.c+15536900+catcat520+jc3213+Rasso1++</em:creator>
+        <em:description>节约60秒，您就多活1分钟！      千千万万个1分钟？柠檬酒为国家环保节能做出了贡献！
+
+广告60秒或更多？！   嘿，阿飞，一边玩球球去！</em:description>
+        <em:bootstrap>true</em:bootstrap>
+        <em:updateURL>https://raw.githubusercontent.com/rasso1/youkuantiads/master/AntiChinaVideoAds_with_player.rdf</em:updateURL>
+
+        <em:targetApplication><!-- Firefox -->
+            <Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>10.0</em:minVersion>
+                <em:maxVersion>*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+
+    </Description>
+</RDF>
