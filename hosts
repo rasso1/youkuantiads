@@ -1,13 +1,7 @@
-
-127.0.0.1	localhost
-0.0.0.0   union.meizumi.com
-#BaiduRD
 61.135.169.121 www.baidu.com
 61.135.169.125 www.baidu.com
-#Flashget Accelerate
 221.123.176.125 s5.flashget.com
 221.123.176.136 cplog.flashget.com
-#Operachina
 59.151.106.253 operachina.com
 59.151.106.253 bbs.operachina.com
 59.151.106.253 mini.operachina.com
@@ -17,21 +11,15 @@
 59.151.106.253 static.operachina.com
 59.151.106.253 wiki.operachina.com
 59.151.106.253 www.operachina.com
-#GoogleCode
 203.208.46.200 haoutil.googlecode.com
 74.125.203.82 haoutil.googlecode.com
 173.194.72.82 haoutil.googlecode.com
 74.125.203.82 simpleu.googlecode.com
 173.194.72.82 simpleu.googlecode.com
 203.208.46.200 simpleu.googlecode.com
-#Soutong
 76.164.232.68 5isotoi5.org
 76.164.232.68 bbs.5isotoi5.org
 76.164.232.68 www.5isotoi5.org
-2001:470:7b:99::2 ipv6.5isotoi5.org
-2001:470:7b:9a::2 ipv6.5isotoi5.org
-2001:470:7b:99::2 soutong.iloveyou
-#DropBox
 108.160.167.208 www.dropbox.com
 108.160.166.148 www.dropbox.com
 108.160.167.206 www.dropbox.com
