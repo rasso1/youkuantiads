@@ -1,4 +1,4 @@
-火狐去视频广告扩展AntiChinaVideoAdsAlliances（本地播放版）
+火狐去视频广告扩展AntiChinaVideoAdsAlliances（本地播放版）：
 
 在以下作者基础上修改而成：
 OpenGG.Clean.Player 作者 鲁夫的爱    （一代风流人物，开帮派之先河）
