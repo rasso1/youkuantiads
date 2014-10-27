@@ -46,21 +46,20 @@ AntiChinaVideoAds.prototype = {
         },
         'letv': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/letv.swf',
-            're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/((?!(Live|seed))((C|S)[\w]{2,3})?(?!Live)[\w]{4}|swf))Player*\.swf/i
+            're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/((?!(Live|seed|Disk))((C|S)[\w]{2,3})?(?!Live)[\w]{4}|swf))Player*\.swf/i
+        },
+        'letv_live': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/letvlive.swf',
+            're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/\d+\/newplayer\/LivePlayer\.swf/i
         },
         'letvskin': {
-            'player': 'http://player.letvcdn.com/p/201403/05/1456/newplayer/1/SLetvPlayer.swf',
-            're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/(?!1456)\d*\/newplayer\/\d+\/SLetvPlayer\.swf/i
-        },
-        'pplive': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/pplive.swf',
-            're': /http:\/\/player\.pplive\.cn\/ikan\/.*\/player4player2\.swf/i
+            'player': 'http://player.letvcdn.com/p/201407/24/15/newplayer/1/SSLetvPlayer.swf',
+            're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/(?!15)\d*\/newplayer\/\d+\/S?SLetvPlayer\.swf/i
         },
         'pplive_live': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/pplive_live.swf',
             're': /http:\/\/player\.pplive\.cn\/live\/.*\/player4live2\.swf/i
         },
-
         'sohu': {
            'player': 'chrome://AntiChinaVideoAds/content/swf/sohu.swf',
            're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!(live|\d+)).*\d+\/(main|PlayerShell)\.swf/i
@@ -77,7 +76,7 @@ AntiChinaVideoAds.prototype = {
             'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
             're': /http:\/\/www\.iqiyi\.com\/player\/cupid\/.*\/pps[\w]+.swf/i
         },
-        'wannima': {
+        'wanhenda': {
             'player': 'http://yuntv.letv.com/bcloud.swf',
             're': /http:\/\/assets\.dwstatic\.com\/.*\/vppp\.swf/i
         },
@@ -87,7 +86,7 @@ AntiChinaVideoAds.prototype = {
 		},
         '17173_out': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_file_out.swf',
-  	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_file_out\.swf/i
+  	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_file_(custom)?out\.swf/i
      	},			
 	    '17173_stream_customOut': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_stream_out.swf',
