@@ -18,7 +18,7 @@ YoukuAntiADs@harv.c.uc  作者cinhoo    （退隐江湖之风清扬，时不时�
 下崽地址（两版本）：
 新版启用霸气侧漏名：AntiChinaVideoAdsAlliances（中国反视频广告联盟）支持在线更新：
 1.位于github的在线更新版本（下载安装后点击在线更新获取最新版本）：
-https://github.com/rasso1/youkuantiads/releases/download/0920/AntiChinaVideoAds_with_player0920.xpi
+https://github.com/rasso1/youkuantiads/releases/download/1027/AntiChinaVideoAds_with_player10272.xpi
 360盘备用地址： http://yunpan.cn/Q7pgYgEB6JcGB （提取码：a5f5）
 2 .火狐官方扩展中心版本（新版在线更新需通过3天官方安全审核，也可手动下载更新）：
 https://addons.mozilla.org/zh-CN/firefox/addon/antichinavideoadsalliances/
@@ -26,9 +26,9 @@ https://addons.mozilla.org/zh-CN/firefox/addon/antichinavideoadsalliances/
 
 
 
-
-
 版本更新历史：
+10月27日更新，修复乐视网盘播放，修复乐视在线直播，为美观缩写英文名（ACVAA）及缩短版本号（最新版本号1.7.2）
+10月23日更新，优化图标设计，增加内容介绍，缩减安装包大小，使用新版爱奇艺播放器（最新版本号1.7.0.6）
 09月28日更新，修复PPTV播放黑屏的问题。（最新版本号1.7.0.5）
 09月26日更新，提交火狐官方扩展中心认证，并提供下载，该版本与通过github更新方式不同，请选择安装。
 09月20日更新，增加17173定制外链广告过滤（最新版本号1.7.0.3）
