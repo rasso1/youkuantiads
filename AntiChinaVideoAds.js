@@ -84,6 +84,10 @@ AntiChinaVideoAds.prototype = {
             'player': 'chrome://AntiChinaVideoAds/content/swf/iqiyi.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer.*\.swf/i
 		},	
+		'ppslive': {
+            'player': 'http://www.iqiyi.com/player/20140613210124/livePlayer.swf',
+            're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/am.*\.swf/i
+		},		
         'wanhenda': {
             'player': 'http://yuntv.letv.com/bcloud.swf',
             're': /http:\/\/assets\.dwstatic\.com\/.*\/vppp\.swf/i
