@@ -46,7 +46,7 @@ AntiChinaVideoAds.prototype = {
         },
         'letv': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/letv.swf',
-            're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/(?!(Live|seed|Disk))((C|S)[\w]{2,3})?(?!Live)[\w]{4})Player[^\.]*\.swf/i
+            're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/((?!(Live|seed|Disk))(S[\w]{2,3})?(?!Live)[\w]{4}|swf))Player*\.swf/i
         },
 		'letv_live': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/letvlive.swf',
