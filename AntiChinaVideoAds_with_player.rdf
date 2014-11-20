@@ -12,7 +12,7 @@
                                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                                 <em:minVersion>10.0</em:minVersion>
                                 <em:maxVersion>*</em:maxVersion>
-                                <em:updateLink>http://storage.jcloud.com/7788/ACVAA11191.xpi</em:updateLink>
+                                <em:updateLink>http://storage.jcloud.com/7788/ACVAA11191.xpi?Expires=2016465194&AccessKey=8c7cb8b00cb74cb4add2d350cd5d5d61&Signature=56idkTyvKKiSOQL3lKGQdl%2BjsG4%3D</em:updateLink>
                             </RDF:Description>
                         </em:targetApplication>
                     </RDF:Description>
