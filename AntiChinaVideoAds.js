@@ -33,7 +33,7 @@ AntiChinaVideoAds.prototype = {
             're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop|Share)?Player_?.*)\.swf/i
         },
         'tudou': {
-            'player': 'http://noads.aliapp.com/swf/tudou.swf',
+            'player': 'http://no_ads.jd-app.com/tudou.swf',
             're': /http:\/\/js\.tudouui\.com\/.*portalplayer[^\.]*\.swf/i
         },
         'tudou_olc': {
@@ -49,7 +49,7 @@ AntiChinaVideoAds.prototype = {
             're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/((?!(Live|seed|Disk))(S[\w]{2,3})?(?!Live)[\w]{4}|swf))Player*\.swf/i
         },
         'letv_live': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/letvlive.swf',
+            'player': 'http://no_ads.jd-app.com/letvlive.swf',
             're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/\d+\/newplayer\/LivePlayer\.swf/i
         },
         'letvskin': {
@@ -77,7 +77,7 @@ AntiChinaVideoAds.prototype = {
            're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(live\/|)\d+\/(main|PlayerShell)\.swf/i
         },
 		'pps': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
+            'player': 'http://no_ads.jd-app.com/pps.swf',
             're': /http:\/\/www\.iqiyi\.com\/player\/cupid\/.*\/pps[\w]+.swf/i
         },
 		'ppsiqiyi': {
