@@ -11,45 +11,45 @@ function AntiChinaVideoAds() {};
 AntiChinaVideoAds.prototype = {
     SITES: {
         'youku_loader': {
-            'player': 'http://noads.aliapp.com/swf/loader.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/loader.swf',
             're': /http:\/\/static\.youku\.com(\/v[\d\.]+)?\/v\/swf\/loaders?\.swf/i
         },
         'youku_player': {
-            'player': 'http://noads.aliapp.com/swf/player.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/player.swf',
             're': /http:\/\/static\.youku\.com(\/v[\d\.]+)?\/v\/swf\/q?player[^\.]*\.swf/i
         },
         'ku6': {
-            'player': 'http://noads.aliapp.com/swf/ku6.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/ku6.swf',
             're': /http:\/\/player\.ku6cdn\.com\/default\/common\/player\/\d{12}\/player\.swf/i
         },
         'ku6_out': {
-            'player': 'http://noads.aliapp.com/swf/ku6_out.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/ku6_out.swf',
             're': /http:\/\/player\.ku6cdn\.com\/default\/out\/\d{12}\/player\.swf/i
         },
         'iqiyi': {
-            'player0': 'http://noads.aliapp.com/swf/iqiyi_out.swf',
-            'player1': 'http://noads.aliapp.com/swf/iqiyi5.swf',
-            'player2': 'http://noads.aliapp.com/swf/iqiyi.swf',
+            'player0': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
+            'player1': 'chrome://AntiChinaVideoAds/content/swf/iqiyi5.swf',
+            'player2': 'chrome://AntiChinaVideoAds/content/swf/iqiyi.swf',
             're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop|Share)?Player_?.*)\.swf/i
         },
         'tudou': {
-            'player': 'http://no_ads.jd-app.com/tudou.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/tudou.swf',
             're': /http:\/\/js\.tudouui\.com\/.*portalplayer[^\.]*\.swf/i
         },
         'tudou_olc': {
-            'player': 'http://noads.aliapp.com/swf/olc_8.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/olc_8.swf',
             're': /http:\/\/js\.tudouui\.com\/.*olc[^\.]*\.swf/i
         },
         'tudou_sp': {
-            'player': 'http://noads.aliapp.com/swf/sp.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/sp.swf',
             're': /http:\/\/js\.tudouui\.com\/.*\/socialplayer[^\.]*\.swf/i
         },
 		'letv': {
-            'player': 'http://noads.aliapp.com/swf/letv.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/letv.swf',
             're': /http:\/\/.*letv[\w]*\.com\/(hz|.*\/((?!(Live|seed|Disk))(S[\w]{2,3})?(?!Live)[\w]{4}|swf))Player*\.swf/i
         },
         'letv_live': {
-            'player': 'http://no_ads.jd-app.com/letvlive.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/letvlive.swf',
             're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/\d+\/newplayer\/LivePlayer\.swf/i
         },
         'letvskin': {
@@ -57,59 +57,59 @@ AntiChinaVideoAds.prototype = {
             're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/(?!15)\d*\/newplayer\/\d+\/S?SLetvPlayer\.swf/i
         },
         'pptv': {
-            'player': 'http://noads.aliapp.com/swf/pptv.in.Ikan.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/pptv.swf',
             're': /http:\/\/player.pplive.cn\/ikan\/.*\/player4player2\.swf/i
         },
 		'pplive': {
-            'player': 'http://noads.aliapp.com/swf/pptv.in.Live.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/pptvLive.swf',
             're': /http:\/\/player.pplive.cn\/live\/.*\/player4live2\.swf/i
         },
 		'sohu': {
-           'player': 'http://noads.aliapp.com/swf/sohu.swf',
-           're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!(live|\d+)).*\d+\/(main|PlayerShell)\.swf/i
+           'player': 'chrome://AntiChinaVideoAds/content/swf/sohu.swf',
+           're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!(ap|live|\d+)).*\d+\/(main|PlayerShell)\.swf/i
         },
         'sohu_liv': {
-           'player': 'http://noads.aliapp.com/swf/sohu_live.swf',
+           'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
            're': /http:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]{2,5})?(\/test)?\/(player|webplayer)\/(main|playershell)\.swf/i
         },
         'sohu_live': {
-           'player': 'http://noads.aliapp.com/swf/sohu_live.swf',
+           'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
            're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(live\/|)\d+\/(main|PlayerShell)\.swf/i
         },
 		'pps': {
-            'player': 'http://no_ads.jd-app.com/pps.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
             're': /http:\/\/www\.iqiyi\.com\/player\/cupid\/.*\/pps[\w]+.swf/i
         },
 		'ppsiqiyi': {
-            'player': 'http://noads.aliapp.com/swf/iqiyi.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/iqiyi.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer.*\.swf/i
 		},	
 		'ppslive': {
             'player': 'http://www.iqiyi.com/player/20140613210124/livePlayer.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/am.*\.swf/i
-		},	
+		},		
         'wanhenda': {
             'player': 'http://yuntv.letv.com/bcloud.swf',
             're': /http:\/\/assets\.dwstatic\.com\/.*\/vppp\.swf/i
         },
         '17173': {
-            'player': 'http://noads.aliapp.com/swf/17173.in.Vod.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_file.swf',
             're': /http:\/\/f\.v\.17173cdn\.com\/\d+\/flash\/Player_file\.swf/i			                
 		},
         '17173_out': {
-            'player': 'http://noads.aliapp.com/swf/17173.out.Vod.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_file_out.swf',
   	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_file_(custom)?out\.swf/i
      	},			
 	    '17173_stream_customOut': {
-            'player': 'http://noads.aliapp.com/swf/17173.out.Live.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_stream_out.swf',
   	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_stream_(custom)?Out\.swf/i
 	    },			
         '17173_live': {
-            'player': 'http://noads.aliapp.com/swf/17173.in.Live.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_stream.swf',
             're': /http:\/\/f\.v\.17173cdn\.com\/\d+\/flash\/Player_stream(_firstpage)?\.swf/i
         },
 		'baiduAD': {
-            'player': 'http://noads.aliapp.com/swf/baidu.call.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/baiduAD.swf',
 		    're': /http:\/\/list\.video\.baidu\.com\/swf\/advPlayer\.swf/i
 		}
     },
