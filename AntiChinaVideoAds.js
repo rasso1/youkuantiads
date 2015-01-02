@@ -65,16 +65,12 @@ AntiChinaVideoAds.prototype = {
             're': /http:\/\/player.pplive.cn\/live\/.*\/player4live2\.swf/i
         },
 		'sohu': {
-           'player': 'chrome://AntiChinaVideoAds/content/swf/sohu.swf',
-           're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!(ap|live|\d+)).*\d+\/(main|PlayerShell)\.swf/i
+           'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
+           're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(?!ap).*\d+\/(main|PlayerShell)\.swf/i
         },
         'sohu_liv': {
            'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
            're': /http:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]{2,5})?(\/test)?\/(player|webplayer)\/(main|playershell)\.swf/i
-        },
-        'sohu_live': {
-           'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
-           're': /http:\/\/tv\.sohu\.com\/upload\/swf\/(live\/|)\d+\/(main|PlayerShell)\.swf/i
         },
 		'pps': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
