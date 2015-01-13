@@ -29,8 +29,8 @@ AntiChinaVideoAds.prototype = {
         'iqiyi': {
             'player0': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
             'player1': 'chrome://AntiChinaVideoAds/content/swf/iqiyi5.swf',
-            'player2': 'chrome://AntiChinaVideoAds/content/swf/iqiyi.swf',
-            're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop|Share)?Player_?.*)\.swf/i
+            'player2': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
+            're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Share)?Player_?.*)\.swf/i
         },
         'tudou': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/tudou.swf',
@@ -108,6 +108,22 @@ AntiChinaVideoAds.prototype = {
             'player': 'chrome://AntiChinaVideoAds/content/swf/baiduAD.swf',
 		    're': /http:\/\/list\.video\.baidu\.com\/swf\/advPlayer\.swf/i
 		}
+    },
+	FILTERS: {
+	    'qq': {
+            'player': 'http://livep.l.qq.com/livemsg',
+            're': /http:\/\/livew\.l\.qq\.com\/livemsg\?/i
+        }
+	},
+	DOMAINS: {
+    'iqiyi': {
+      'host': 'http://www.iqiyi.com/',
+      're': /http:\/\/.*\.qiyi\.com/i
+      },
+	'youku': {
+      'host': 'http://www.youku.com/',
+      're': /http:\/\/.*\.youku\.com/i
+      }
     },
     os: Cc['@mozilla.org/observer-service;1']
             .getService(Ci.nsIObserverService),
@@ -189,10 +205,39 @@ AntiChinaVideoAds.prototype = {
         return null;
     },
     observe: function(aSubject, aTopic, aData) {
+	    if (aTopic == "http-on-modify-request") {
+    var httpReferer = aSubject.QueryInterface(Ci.nsIHttpChannel);
+    for (var i in this.DOMAINS) {
+      var domain = this.DOMAINS[i];
+        try {
+        var URL = httpReferer.originalURI.spec;
+          if (domain['re'].test(URL)) {
+            httpReferer.setRequestHeader('Referer', domain['host'], false);
+          }
+        } catch (e) {}
+      }
+    }
+	
         if(aTopic != 'http-on-examine-response') return;
 
         var http = aSubject.QueryInterface(Ci.nsIHttpChannel);
-
+        for (var i in this.FILTERS) {
+          var site = this.FILTERS[i];
+          if (site['re'].test(http.URI.spec)) {
+            if (!site['storageStream'] || !site['count']) {
+               http.suspend();
+               this.ggetPlayer(site, function () {
+                 http.resume();
+              });
+            }
+            var newListener = new TrackingListener();
+            aSubject.QueryInterface(Ci.nsITraceableChannel);
+            newListener.originalListener = aSubject.setNewListener(newListener);
+            newListener.site = site;
+            break;
+      }
+    }
+				
         var aVisitor = new HttpHeaderVisitor();
         http.visitResponseHeaders(aVisitor);
         if (!aVisitor.isFlash()) return;
@@ -232,9 +277,11 @@ AntiChinaVideoAds.prototype = {
     register: function() {
         this.init();
         this.os.addObserver(this, 'http-on-examine-response', false);
+		this.os.addObserver(this, "http-on-modify-request", false);
     },
     unregister: function() {
         this.os.removeObserver(this, 'http-on-examine-response', false);
+		this.os.removeObserver(this, "http-on-modify-request", false);
     }
 };
 
