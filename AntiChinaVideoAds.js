@@ -221,22 +221,6 @@ AntiChinaVideoAds.prototype = {
         if(aTopic != 'http-on-examine-response') return;
 
         var http = aSubject.QueryInterface(Ci.nsIHttpChannel);
-        for (var i in this.FILTERS) {
-          var site = this.FILTERS[i];
-          if (site['re'].test(http.URI.spec)) {
-            if (!site['storageStream'] || !site['count']) {
-               http.suspend();
-               this.ggetPlayer(site, function () {
-                 http.resume();
-              });
-            }
-            var newListener = new TrackingListener();
-            aSubject.QueryInterface(Ci.nsITraceableChannel);
-            newListener.originalListener = aSubject.setNewListener(newListener);
-            newListener.site = site;
-            break;
-      }
-    }
 				
         var aVisitor = new HttpHeaderVisitor();
         http.visitResponseHeaders(aVisitor);
