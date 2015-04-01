@@ -77,7 +77,7 @@ AntiChinaVideoAds.prototype = {
             're': /http:\/\/www\.iqiyi\.com\/player\/cupid\/.*\/pps[\w]+.swf/i
         },
 		'ppsiqiyi': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/iqiyi.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer.*\.swf/i
 		},	
 		'ppslive': {

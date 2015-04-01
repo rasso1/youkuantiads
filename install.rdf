@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>AntiChinaVideoAds_with_player@xxx.com</em:id>
         <em:name>ACVAA 中国反视频广告联盟</em:name>
-        <em:version>1.9.2</em:version>
+        <em:version>1.9.3</em:version>
         <em:creator>Harv.c+15536900+catcat520+jc3213+Rasso1++</em:creator>
         <em:description>节约60秒，您就多活1分钟！ 千千万万个1分钟？柠檬酒为地球环保节能做出了贡献！
 广告60秒或更多？！   嘿，阿飞，一边玩球球去！
@@ -12,7 +12,7 @@
 功能介绍：去除中国主流视频网站（包括其外链）好几十秒无节操视频广告，如爱奇艺，
                   PPS，乐视，PPTV，优酷，酷6，搜狐，土豆，17173，Bilibili，多玩等
 
-使用方法：安装后，关闭打开的视频页面并清理浏览器缓存，再重启下浏览器即可</em:description>
+使用方法：安装或更新后，关闭打开的视频页面并清理浏览器缓存，再重启下浏览器即可</em:description>
         <em:bootstrap>true</em:bootstrap>
         <em:updateURL>https://raw.githubusercontent.com/rasso1/youkuantiads/master/AntiChinaVideoAds_with_player.rdf</em:updateURL>
 
