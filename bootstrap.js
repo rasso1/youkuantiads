@@ -12,10 +12,12 @@ function startup(data, reason) {
 }
 
 function shutdown(data, reason) {
+    if (reason == APP_SHUTDOWN) return;
     if(y) {
         y.unregister();
         y = null;
     }
+    Cu.unload("chrome://AntiChinaVideoAds/content/AntiChinaVideoAds.js");
 }
 
 function install(data, reason) {
