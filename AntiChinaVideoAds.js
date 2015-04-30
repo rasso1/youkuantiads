@@ -70,7 +70,7 @@ AntiChinaVideoAds.prototype = {
         },
         'sohu_liv': {
            'player': 'chrome://AntiChinaVideoAds/content/swf/sohulive.swf',
-           're': /http:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]{2,5})?(\/test)?\/(player|webplayer)\/(main|playershell)\.swf/i
+           're': /http:\/\/\d+\.\d+\.\d+\.\d+(:\d+)?(\/test)?\/(testplayer|player|webplayer)\/(main|playershell)\.swf/i
         },
 		'pps': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
