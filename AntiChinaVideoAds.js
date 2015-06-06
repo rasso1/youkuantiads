@@ -30,7 +30,7 @@ AntiChinaVideoAds.prototype = {
             'player0': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
             'player1': 'chrome://AntiChinaVideoAds/content/swf/iqiyi5.swf',
             'player2': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
-            're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop|Share|Enjoy)?Player_?.*)\.swf/i
+            're': /https?:\/\/www\.iqiyi\.com\/(player\/\d+\/Player|common\/flashplayer\/\d+\/(Main|Coop|Share|Enjoy)?Player_?.+)\.swf/i
         },
         'tudou': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/tudou.swf',
