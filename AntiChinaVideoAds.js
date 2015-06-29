@@ -76,7 +76,6 @@ AntiChinaVideoAds.prototype = {
             'player': 'http://www.iqiyi.com/player/20140613210124/livePlayer.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/am.*\.swf/i
 		}
-		}
     },
 	FILTERS: {
 	    'qq': {
