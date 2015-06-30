@@ -18,6 +18,14 @@ AntiChinaVideoAds.prototype = {
             'player': 'chrome://AntiChinaVideoAds/content/swf/player.swf',
             're': /http:\/\/static\.youku\.com(\/v[\d\.]+)?\/v\/swf\/q?player[^\.]*\.swf/i
         },
+        'ku6': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/ku6.swf',
+            're': /http:\/\/player\.ku6cdn\.com\/default\/common\/player\/\d{12}\/player\.swf/i
+        },
+        'ku6_out': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/ku6_out.swf',
+            're': /http:\/\/player\.ku6cdn\.com\/default\/out\/\d{12}\/player\.swf/i
+        },
         'iqiyi': {
             'player0': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
             'player1': 'chrome://AntiChinaVideoAds/content/swf/iqiyi5.swf',
@@ -65,7 +73,7 @@ AntiChinaVideoAds.prototype = {
            're': /http:\/\/\d+\.\d+\.\d+\.\d+(:\d+)?(\/test)?\/(testplayer|player|webplayer)\/(main|main\d|playershell)\.swf/i
         },
 		'pps': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/iqiyi_out.swf',
+            'player': 'chrome://AntiChinaVideoAds/content/swf/pps.swf',
             're': /http:\/\/www\.iqiyi\.com\/player\/cupid\/.*\/pps[\w]+.swf/i
         },
 		'ppsiqiyi': {
@@ -75,6 +83,26 @@ AntiChinaVideoAds.prototype = {
 		'ppslive': {
             'player': 'http://www.iqiyi.com/player/20140613210124/livePlayer.swf',
             're': /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/am.*\.swf/i
+		},		
+        '17173': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_file.swf',
+            're': /http:\/\/f\.v\.17173cdn\.com\/\d+\/flash\/Player_file\.swf/i			                
+		},
+        '17173_out': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_file_out.swf',
+  	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_file_(custom)?out\.swf/i
+     	},			
+	    '17173_stream_customOut': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_stream_out.swf',
+  	    're': /http:\/\/f\.v\.17173cdn\.com(\/\d+)?\/flash\/Player_stream_(custom)?Out\.swf/i
+	    },			
+        '17173_live': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/17173_Player_stream.swf',
+            're': /http:\/\/f\.v\.17173cdn\.com\/\d+\/flash\/Player_stream(_firstpage)?\.swf/i
+        },
+		'baiduAD': {
+            'player': 'chrome://AntiChinaVideoAds/content/swf/baiduAD.swf',
+		    're': /http:\/\/list\.video\.baidu\.com\/swf\/advPlayer\.swf/i
 		}
     },
 	FILTERS: {
