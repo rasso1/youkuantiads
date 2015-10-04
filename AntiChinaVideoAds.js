@@ -10,12 +10,14 @@ Cu.import("resource://gre/modules/NetUtil.jsm");
 function AntiChinaVideoAds() {};
 AntiChinaVideoAds.prototype = {
     SITES: {
-        'youku_loader': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/loader.swf',
+        'youkuloader': {
+            'player0': 'chrome://AntiChinaVideoAds/content/swf/loader.swf',
+			'player1': 'chrome://AntiChinaVideoAds/content/swf/oloader.swf',
             're': /http:\/\/static\.youku\.com(\/v[\d\.]+)?\/v\/swf\/loaders?\.swf/i
         },
-        'youku_player': {
-            'player': 'chrome://AntiChinaVideoAds/content/swf/player.swf',
+        'youkuplayer': {
+            'player0': 'chrome://AntiChinaVideoAds/content/swf/player.swf',
+			'player1': 'chrome://AntiChinaVideoAds/content/swf/oplayer.swf',
             're': /http:\/\/static\.youku\.com(\/v[\d\.]+)?\/v\/swf\/q?player[^\.]*\.swf/i
         },
         'ku6': {
@@ -54,7 +56,7 @@ AntiChinaVideoAds.prototype = {
         },
         'letvskin': {
             'player': 'http://player.letvcdn.com/p/201407/24/15/newplayer/1/SSLetvPlayer.swf',
-            're': /http:\/\/.*letv[\w]*\.com\/p\/\d+\/\d+\/(?!15)\d*\/newplayer\/\d+\/S?SLetvPlayer\.swf/i
+            're': /http:\/\/.*letv[\w]*\.com\/[\w]*p\/\d+\/\d+\/\d*\/\d+\/\d+\/newplayer\/\d+\/S?SLetvPlayer\.swf/i
         },
         'pptv': {
             'player': 'chrome://AntiChinaVideoAds/content/swf/pptv.swf',
@@ -158,9 +160,88 @@ AntiChinaVideoAds.prototype = {
                 }
             }
         };
+		
+//add
+
+			var site1 = this.SITES['youkuloader'];
+			site1['preHandle'] = function(aSubject) {
+				var wnd = this.getWindowForRequest(aSubject);
+				if(wnd) {
+					site1['cond'] = [
+						!wnd.self.document.querySelector('span.grey'),
+						true
+					];
+					if(!site1['cond']) return;
+					
+					for(var i = 0; i < site1['cond'].length; i++) {
+						if(site1['cond'][i]) {
+							if(site1['player'] != site1['player' + i]) {
+								site1['player'] = site1['player' + i];
+								site1['storageStream'] = site1['storageStream' + i] ? site1['storageStream' + i] : null;
+								site1['count'] = site1['count' + i] ? site1['count' + i] : null;
+							}
+							break;
+						}
+					}
+				}
+			};
+			site1['callback'] = function() {
+				if(!site1['cond']) return;
+
+				for(var i = 0; i < site1['cond'].length; i++) {
+					if(site1['player' + i] == site1['player']) {
+						site1[' ' + i] = site1['storageStream'];
+						site1['count' + i] = site1['count'];
+						break;
+					}
+				}
+			};
+
+
+			var site2 = this.SITES['youkuplayer'];
+			site2['preHandle'] = function(aSubject) {
+				var wnd = this.getWindowForRequest(aSubject);
+				if(wnd) {
+					site2['cond'] = [
+						!wnd.self.document.querySelector('span.grey'),
+						true
+					];
+					if(!site2['cond']) return;
+					
+					for(var i = 0; i < site2['cond'].length; i++) {
+						if(site2['cond'][i]) {
+							if(site2['player'] != site2['player' + i]) {
+								site2['player'] = site2['player' + i];
+								site2['storageStream'] = site2['storageStream' + i] ? site2['storageStream' + i] : null;
+								site2['count'] = site2['count' + i] ? site2['count' + i] : null;
+							}
+							break;
+						}
+					}
+				}
+			};
+			site2['callback'] = function() {
+				if(!site2['cond']) return;
+
+				for(var i = 0; i < site2['cond'].length; i++) {
+					if(site2['player' + i] == site2['player']) {
+						site2[' ' + i] = site2['storageStream'];
+						site2['count' + i] = site2['count'];
+						break;
+					}
+				}
+			};		
     },
     // getPlayer, get modified player
     getPlayer: function(site, callback) {
+		//ADD for BLOCKING
+         if(site['player'] == 'BLOCK') {
+         //Something for later?
+                if(typeof callback === 'function') {
+                      callback();
+                  }
+                return;
+            }
         NetUtil.asyncFetch(site['player'], function(inputStream, status) {
             var binaryOutputStream = Cc['@mozilla.org/binaryoutputstream;1']
                                         .createInstance(Ci['nsIBinaryOutputStream']);
@@ -212,6 +293,8 @@ AntiChinaVideoAds.prototype = {
           }
         } catch (e) {}
       }
+	  //add
+	  return;
     }
 	
         if(aTopic != 'http-on-examine-response') return;
@@ -231,9 +314,19 @@ AntiChinaVideoAds.prototype = {
                     site['preHandle'].apply(fn, args);
 
                 if(!site['storageStream'] || !site['count']) {
+
                     http.suspend();
                     this.getPlayer(site, function() {
-                        http.resume();
+	//ADD for BLOCKING
+
+					if(site['player'] == 'BLOCK') 
+						{
+							//Something for later?
+							console.log("BLOCKING");
+						}
+                    else
+                    {
+					http.resume();}
                         if(typeof site['callback'] === 'function')
                             site['callback'].apply(fn, args);
                     });
@@ -265,10 +358,18 @@ AntiChinaVideoAds.prototype = {
     }
 };
 
+
+
+
+
+
 // TrackingListener, redirect youku player to modified player
 function TrackingListener() {
     this.originalListener = null;
     this.site = null;
+	//add
+	this.aSubject = null;
+	this.originalData = null;
 }
 TrackingListener.prototype = {
     onStartRequest: function(request, context) {
@@ -277,9 +378,10 @@ TrackingListener.prototype = {
     onStopRequest: function(request, context) {
         this.originalListener.onStopRequest(request, context, Cr.NS_OK);
     },
-    onDataAvailable: function(request, context) {
-        this.originalListener.onDataAvailable(request, context, this.site['storageStream'].newInputStream(0), 0, this.site['count']);
-    }
+//Modify in-fight
+		onDataAvailable: function(request, context, inputStream, offset, count) {
+			this.originalListener.onDataAvailable(request, context, this.site['storageStream'].newInputStream(0), 0, this.site['count']);//Replace the original chain to change the dest-File
+		}
 };
 
 function HttpHeaderVisitor() {
